@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include <assert.h>
-
+#include <stdbool.h>
 
 int mode(int arr[], int n ){
-boolean flag = true;
+
   int mode = arr[0];
   int max_count = 1;
   
   for(int i = 0;i < n;i++){
+      bool flag = false;
   for(int j = i-1;j>= 0;j--)
   {
   if(arr[i] == arr[j])
   {
-  flag = false;
+  flag = true;
   break; 
   }
   }
     int search = i+1;
     int count = 1;
-    while(flag)
+    while(!flag)
     {
     if(arr[i] == arr[search]) count++;
     if(search == (n-1))
