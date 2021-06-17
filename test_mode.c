@@ -19,14 +19,11 @@ int mode(int arr[], int n ){
   }
     int search = i+1;
     int count = 1;
-    while(!flag)
+    for(int j = i+1; j < n ;j++)
     {
-    if(arr[i] == arr[search]) count++;
-    if(search == (n-1))
-    {
-      break;
-    }
-    search++;
+        if(flag == false){
+    if(arr[i] == arr[j]) count++;
+        }
     }
     if(max_count < count)
     {
